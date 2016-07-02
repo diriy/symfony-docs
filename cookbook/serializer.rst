@@ -172,9 +172,14 @@ to your class and choose which groups to use when serializing::
         'json', array('groups' => array('group1'))
     );
     
-For those of you who don't like annotations, you can define serialization groups via XML or YAML files. The Serializer component will look for serialization.xml or serialization.yml files located in the Resources/config/ directory of your bundles. In addition, it will look for any XML or YAML file located inside the Resources/config/serialization/ directory.
 
+Instead of ``@Groups`` annotations, the Serializer component also supports Yaml
+or XML files. These configuration are automatically loaded from these locations:
 
+ * The ``serialization.yml`` or ``serialization.xml`` file in
+   ``Resources/config/`` of a bundle;
+ * All ``*.yml`` and ``*.xml`` files in ``Resources/config/serialization/`` of
+   a bundle.
 
 .. _cookbook-serializer-enabling-metadata-cache:
 
